@@ -1,3 +1,6 @@
+#!/bin/sh
+# usage: gs.sh input.pdf output.pdf
+# goal: make the pdf smaller by putting all the images at 600dpi
 echo $1
 echo $2
 gs \
