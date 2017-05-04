@@ -19,7 +19,7 @@ image = image.point(lambda i: 255)
 font_size = 25
 font = ImageFont.truetype("Arial.ttf", font_size)
 font_bold = ImageFont.truetype("Arial Bold.ttf", font_size)
-font_bold_big = ImageFont.truetype("Arial Bold.ttf", int(font_size*1.2))
+font_bold_big = ImageFont.truetype("Arial Bold.ttf", int(font_size*1))
 
 
 draw = ImageDraw.Draw(image)
@@ -32,15 +32,15 @@ for f in sys.argv:
             draw.text((x, k), strip_stars(i), (0,0,0), font=font_bold)
             k += font_size * 1.2
         elif len(i) > 1 and i[0] == '*':
-            draw.rectangle((x, k, x + 300, k + font_size * 1.3), fill='#CCCCDD', outline=None)
-            draw.line((x, k, x + 300, k), fill='#0000AA', width=3)
+            draw.rectangle((x, k, x + 400, k + font_size * 1.3), fill='#9EBCD2', outline=None)
+            draw.line((x, k, x + 400, k), fill='#042037', width=3)
             draw.text((x, k), strip_stars(i), (0,0,0), font=font_bold_big)
             k += font_size * 1.4
         else:
             draw.text((x, k), i, (0,0,0), font=font)
             k += font_size * 1.2
         if k > size_y * 0.75:
-            x += 400
+            x += 500
             k = 200
         
 image.save("/Users/jmouret/todo/todo.png")
