@@ -8,11 +8,11 @@ avx="(vmovapd|vmulpd|vaddpd|vsubpd|vfmadd213pd|vfmadd231pd|vfmadd132pd|vmulsd|va
 check_lib()
 {
     libname=$1
-	echo -n "checking $libname..."
+	echo "checking $libname..."
     if nm $libname 2>/dev/null| c++filt|grep -q Eigen > /dev/null ; then
-		echo -n '\tuse Eigen: yes'
+		echo '\tuse Eigen: yes'
 	else
-			echo -n '\tuse Eigen: no'
+		echo '\tuse Eigen: no'
 	fi
 	if objdump -d $libname| egrep -q $sse; then
 		echo '\tSSE: yes'
